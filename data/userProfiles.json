@@ -1,0 +1,32 @@
+[
+    {
+        "firstName": "Joko",
+        "lastName": "Dodo",
+        "phoneNum": "081234567890",
+        "address": "Jl. Solo No. 17, Jakarta"
+    },
+    {
+        "firstName": "Budi",
+        "lastName": "Santoso",
+        "phoneNum": "089876543210",
+        "address": "Jl. Bangunan Raya No. 5, Bekasi"
+    },
+    {
+        "firstName": "Siti",
+        "lastName": "Aminah",
+        "phoneNum": "085611223344",
+        "address": "Jl. Merdeka No. 45, Depok"
+    },
+    {
+        "firstName": "Dimas",
+        "lastName": "Asikin",
+        "phoneNum": "087899887766",
+        "address": "Jl. Pembangunan No. 12, Tangerang"
+    },
+    {
+        "firstName": "Dewi",
+        "lastName": "Lestari",
+        "phoneNum": "081355443322",
+        "address": "Jl. Melati No. 8, Bogor"
+    }
+]

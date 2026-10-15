@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tukang Ketok | Toko Perkakas</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f5f5;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 450px;
+            padding: 70px 8%;
+            background-color: #242424;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero-label {
+            color: #ff8c32;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            line-height: 1.2;
+            margin: 18px 0;
+        }
+
+        .hero h1 span {
+            color: #ff8c32;
+        }
+
+        .hero p {
+            color: #ccc;
+            margin-bottom: 25px;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            display: inline-block;
+            padding: 11px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+            background-color: #ff8c32;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #e87518;
+        }
+
+        .btn-secondary {
+            border: 1px solid #aaa;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #444;
+        }
+
+        /* GENERAL SECTION */
+        .section {
+            padding: 60px 8%;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-label {
+            color: #e87518;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .section-heading h2 {
+            font-size: 30px;
+            margin: 8px 0;
+        }
+
+        .section-heading p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* CATEGORY */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .category-card {
+            padding: 25px;
+            background-color: white;
+            border: 1px solid #e2e2e2;
+            border-radius: 7px;
+            transition: 0.2s;
+        }
+
+        .category-card:hover {
+            border-color: #ff8c32;
+            transform: translateY(-3px);
+        }
+
+        .category-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff0e2;
+            border-radius: 7px;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .category-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .category-card p {
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* BENEFITS */
+        .benefits {
+            background-color: white;
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .benefit-card {
+            padding: 22px;
+            background-color: #f7f7f7;
+            border-left: 4px solid #ff8c32;
+        }
+
+        .benefit-number {
+            color: #e87518;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .benefit-card h3 {
+            margin: 8px 0;
+            font-size: 18px;
+        }
+
+        .benefit-card p {
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* CALL TO ACTION */
+        .home-cta {
+            margin: 55px 8%;
+            padding: 40px 25px;
+            background-color: #292929;
+            color: white;
+            text-align: center;
+            border-radius: 7px;
+        }
+
+        .home-cta h2 {
+            font-size: 27px;
+            margin-bottom: 8px;
+        }
+
+        .home-cta p {
+            color: #ccc;
+            margin-bottom: 22px;
+        }
+
+        /* FOOTER */
+        .footer {
+            padding: 22px;
+            background-color: #171717;
+            color: #bbb;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: auto;
+                padding: 55px 6%;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .section {
+                padding: 45px 6%;
+            }
+
+            .category-grid,
+            .benefit-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading h2 {
+                font-size: 25px;
+            }
+
+            .home-cta {
+                margin: 35px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <%- include('../partial/navbar') %>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <span class="hero-label">TOKO PERKAKAS ANDALAN</span>
+
+                <h1>
+                    Semua Kebutuhan<br>
+                    <span>Perkakas Ada Di Sini.</span>
+                </h1>
+
+                <p>
+                    Ketok Harga, Borong Kualitas!   
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="/products" class="btn-primary">
+                        Lihat Produk &rarr;
+                    </a>
+
+                    <a href="#keunggulan" class="btn-secondary">
+                        Kenali Kami
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <span class="section-label">PILIH KEBUTUHANMU</span>
+                <h2>Kategori Perkakas</h2>
+                <p>Peralatan yang tepat untuk setiap pekerjaan.</p>
+            </div>
+
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">&#128296;</div>
+                    <h3>Perkakas Tangan</h3>
+                    <p>Palu, obeng, tang, kunci, dan lainnya.</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">&#9881;</div>
+                    <h3>Alat Teknik</h3>
+                    <p>Peralatan untuk pekerjaan teknik dan bengkel.</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">&#127959;</div>
+                    <h3>Material Bangunan</h3>
+                    <p>Kebutuhan material untuk proyek bangunan.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section benefits" id="keunggulan">
+            <div class="section-heading">
+                <span class="section-label">KENAPA TUKANG KETOK?</span>
+                <h2>Belanja Jadi Lebih Mudah</h2>
+            </div>
+
+            <div class="benefit-grid">
+                <div class="benefit-card">
+                    <span class="benefit-number">01</span>
+                    <h3>Pilihan Beragam</h3>
+                    <p>Berbagai kebutuhan perkakas dalam satu tempat.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <span class="benefit-number">02</span>
+                    <h3>Mudah Digunakan</h3>
+                    <p>Temukan produk yang kamu butuhkan dengan mudah.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <span class="benefit-number">03</span>
+                    <h3>Praktis dan Efisien</h3>
+                    <p>Belanja kebutuhan kerja tanpa ribet.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-cta">
+            <h2>Siap Memulai Pekerjaanmu?</h2>
+            <p>Temukan perlengkapan yang kamu butuhkan di Tukang Ketok.</p>
+            <a href="/products" class="btn-primary">
+                Jelajahi Produk &rarr;
+            </a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Tukang Ketok. Semua hak dilindungi.</p>
+    </footer>
+</body>
+</html>
+```

@@ -1,0 +1,37 @@
+[
+    {
+        "userName": "joko",
+        "password": "hashedpassword123",
+        "email": "joko@tukkangketok.com",
+        "role": "seller",
+        "UserProfilesId": 1
+    },
+    {
+        "userName": "budi",
+        "password": "hashedpassword123",
+        "email": "budi@gmail.com",
+        "role": "buyer",
+        "UserProfilesId": 2
+    },
+    {
+        "userName": "siti",
+        "password": "hashedpassword123",
+        "email": "siti@gmail.com",
+        "role": "buyer",
+        "UserProfilesId": 3
+    },
+    {
+        "userName": "dimzz",
+        "password": "hashedpassword123",
+        "email": "dimsgan@tukkangketok.com",
+        "role": "seller",
+        "UserProfilesId": 4
+    },
+    {
+        "userName": "dewi",
+        "password": "hashedpassword123",
+        "email": "dewi@gmail.com",
+        "role": "buyer",
+        "UserProfilesId": 5
+    }
+]

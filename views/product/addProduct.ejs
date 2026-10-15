@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 40px 20px;
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        color: #292929;
+    }
+
+    h2 {
+        max-width: 600px;
+        margin: 0 auto 25px;
+        font-size: 28px;
+        color: #242424;
+    }
+
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 30px;
+        background-color: #ffffff;
+        border-top: 5px solid #ff8c32;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    label {
+        display: inline-block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 11px 12px;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        background-color: #ffffff;
+        color: #292929;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+        outline: none;
+        border-color: #ff8c32;
+        box-shadow: 0 0 0 2px rgba(255, 140, 50, 0.15);
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
+    button {
+        padding: 11px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #ff8c32;
+        color: #242424;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #e8751c;
+    }
+
+    a {
+        display: inline-block;
+        margin-left: 10px;
+        padding: 10px 18px;
+        border-radius: 5px;
+        background-color: #e5e5e5;
+        color: #292929;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    a:hover {
+        background-color: #d2d2d2;
+    }
+
+    @media (max-width: 600px) {
+        body {
+            padding: 25px 15px;
+        }
+
+        h2 {
+            font-size: 24px;
+        }
+
+        form {
+            padding: 20px;
+        }
+    }
+</style>
+
+</head>
+    <body>
+    <h2>Tambah Produk Baru</h2>
+
+<form action="/products/add" method="POST">
+    <div>
+    <label>Nama Produk:</label><br>
+    <input type="text" name="name" required>
+    </div>
+    <br>
+
+    <div>
+    <label>Kategori:</label><br>
+    <select name="CategoryId" required>
+        <option value="">-- Pilih Kategori --</option>
+        <% categories.forEach(cat => { %>
+        <option value="<%= cat.id %>"><%= cat.name %></option>
+        <% }) %>
+    </select>
+    </div>
+    <br>
+
+    <div>
+    <label>Harga (Rp):</label><br>
+    <input type="number" name="price" required>
+    </div>
+    <br>
+
+    <div>
+    <label>Stok:</label><br>
+    <input type="number" name="stock" required>
+    </div>
+    <br>
+
+    <div>
+    <label>Link Gambar (URL):</label><br>
+    <input type="text" name="imageUrl" placeholder="https://contoh.com/gambar.jpg">
+    </div>
+    <br>
+
+    <div>
+    <label>Deskripsi:</label><br>
+    <textarea name="description" rows="4"></textarea>
+    </div>
+    <br>
+
+    <button type="submit">Simpan</button>
+    <a href="/products">Batal</a>
+</form>
+</body>
+
+</html>

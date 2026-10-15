@@ -1,0 +1,98 @@
+[
+    {
+        "name": "Palu Besi Baja",
+        "description": "Palu tempa sakti mandraguna. Cocok buat ngetok paku, atau ngetok kepala tetangga yang suka berisik tengah malem.",
+        "price": 75000,
+        "stock": 25,
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYMDxRIHpo9oju7weQDkkhI0hn3QoOhOnNIhOVnV6cBQ&s=10",
+        "CategoryId": 1
+    },
+    {
+        "name": "Obeng Set Plus Minus",
+        "description": "Obeng magnetik buat buka baut. Sayang nggak bisa bantu buka hati dia yang udah tertutup rapat.",
+        "price": 45000,
+        "stock": 40,
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqs5Bz1s_RSr7tYZ7CKx90uwMn5mFfuJVgofXsr60_ug&s",
+        "CategoryId": 1
+    },
+    {
+        "name": "Kunci Pas Ring Set",
+        "description": "Kunci pas anti karat. Dipakai buat ngencengin baut motor bisa, buat ngencengin niat tobat juga boleh.",
+        "price": 150000,
+        "stock": 20,
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2YjOncP4u6SkkR8GWiQAzAdX_LzNlBvqQdtgX8aH5fw&s=10",
+        "CategoryId": 1
+    },
+    {
+        "name": "Bor Listrik Tangan 10mm",
+        "description": "Suaranya berisik banget kayak suara tetangga sebelah lagi renovasi tiap hari Minggu pagi. Dijamin ampuh!",
+        "price": 350000,
+        "stock": 10,
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCbgDxhCMurCngKFnOFAtOXwsaBXkwas9EqMBh3e-PrQ&s",
+        "CategoryId": 2
+    },
+    {
+        "name": "Gerinda Tangan Elektrik",
+        "description": "Mesin pemotong besi paling ngeri. Hati-hati makenya, jangan buat motong hubungan mantan.",
+        "price": 280000,
+        "stock": 12,
+        "imageUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSwp0mPcV1864CXGAUzoemZtAUAuf7m3-N4pVFr-oTZH9PD_h4B71yJHQMtSi-9RJcHOuiU0agjSgyu2HMVVD47moPl7qWbzm8w74v3TBreldtEN_yLn8xHZQ&usqp=CAc",
+        "CategoryId": 2
+    },
+    {
+        "name": "Cat Tembok Putih 5kg",
+        "description": "Biar tembok rumah lo nggak keliatan suram kayak masa depan pas akhir bulan.",
+        "price": 120000,
+        "stock": 15,
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXZfzCWV4P6-NThZUaMUlq51pVlQbYLWF1Pymi_dFNHg&s=10",
+        "CategoryId": 3
+    },
+    {
+        "name": "Semen Instan 40kg",
+        "description": "Semen kuat buat ngecor. Tapi nggak sekuat tekad gw yang mau lulus bootcamp tepat waktu.",
+        "price": 65000,
+        "stock": 50,
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL2Vhvw_dHGx0g5OKYrR-MAtI9JefbwDwQdI5sTos4pg&s=10",
+        "CategoryId": 3
+    },
+    {
+        "name": "Helm Safety Proyek",
+        "description": "Melindungi kepala dari kejatuhan genteng, maupun kejatuhan beban hidup yang berat.",
+        "price": 35000,
+        "stock": 30,
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL6jsg6g-gdZrDEJ8r1sM7A-2QGO5aKxhqTNs3GCr31g&s=10",
+        "CategoryId": 4
+    },
+    {
+        "name": "Kacamata Safety",
+        "description": "Biar mata lo nggak perih kena debu, dan nggak silau pas liat mantan jalan sama yang baru.",
+        "price": 20000,
+        "stock": 35,
+        "imageUrl": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS0cZBIZtsrpMKU8v5UJ20Gfq-q72GsQLirscYtIZwFYVpsfU62DbxhW6ci5SY-FsF9gRo_3PzH3TVwvwJtSWwQe58pjOGGRNjq1CfPwyUaB5GpYx-aY_NU3w",
+        "CategoryId": 4
+    },
+    {
+        "name": "Rompi Keselamatan Kerja",
+        "description": "Warnanya ngejreng banget, biar lo dikira orang penting padahal cuma kuli magang.",
+        "price": 50000,
+        "stock": 25,
+        "imageUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcS5SgfH6PndZrmBFT9TRMyoKVDasGqigozw_tRlO1JdbeOkG6aJvFX2XX7Ni5-efRiB1c7oAW-H7718cTPnxpkiUJonsdWdhXNfsvahOir-_0_0IUsQpB1E",
+        "CategoryId": 4
+    },
+    {
+        "name": "Meteran Roll 100 Meter",
+        "description": "Buat mengukur panjang bangunan. Sayang nggak bisa dipakai buat mengukur seberapa besar rasa sayang dia ke lo.",
+        "price": 25000,
+        "stock": 60,
+        "imageUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQwf6Lp7c3QTIbLQ9hOsc67NhK4GogsdFqhCjj8aIalxqNm-T_x8HioZKSGNqq2vYIrovjdbW-deTt31oCgVxmB35X2IY2SsBsIm6GP2zY4to1qTKajgo9c",
+        "CategoryId": 5
+    },
+    {
+        "name": "Tangga Lipat Aluminium 2 Meter",
+        "description": "Biar lo bisa menggapai cita-cita yang tinggi, atau minimal bisa benerin genteng bocor.",
+        "price": 450000,
+        "stock": 8,
+        "imageUrl": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRm8Jtgnkvqqpmzn8GpxSJcp0GNQpay5QSUn8ks2mue5BAkuBOTigOXZKZfLBFQ8tzkLDG7dQ4JmeZNzem5iwl35A3uuOgzqgPLs6L2UHjJ6sQ2UcxBWD3Kgw",
+        "CategoryId": 5
+    }
+]

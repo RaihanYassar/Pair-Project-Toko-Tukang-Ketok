@@ -1,0 +1,87 @@
+<style>
+    .navbar {
+        background-color: #242424;
+        padding: 0 8%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 75px;
+        gap: 20px;
+    }
+
+    .navbar-brand {
+        color: #ff8c32;
+        font-size: 23px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    .navbar-brand span {
+        color: white;
+    }
+
+    .navbar-links {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    .navbar-links a {
+        color: #e5e5e5;
+        font-size: 14px;
+        font-weight: 500;
+        transition: 0.2s;
+    }
+
+    .navbar-links a:hover {
+        color: #ff8c32;
+    }
+
+    .navbar-links .register-link {
+        background-color: #ff8c32;
+        color: white;
+        padding: 9px 16px;
+        border-radius: 5px;
+    }
+
+    .navbar-links .register-link:hover {
+        background-color: #e87518;
+        color: white;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    @media (max-width: 650px) {
+        .navbar {
+            padding: 18px 5%;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .navbar-links {
+            gap: 15px;
+        }
+
+        .navbar-links a {
+            font-size: 13px;
+        }
+    }
+</style>
+
+<nav class="navbar">
+    <a href="/" class="navbar-brand">
+        TUKANG <span>KETOK.</span>
+    </a>
+
+    <div class="navbar-links">
+        <a href="/">Beranda</a>
+        <a href="/products">Katalog Produk</a>
+        <a href="/login">Login</a>
+        <a href="/register" class="register-link">Register</a>
+        <a href="/logout">Logout</a>
+    </div>
+</nav>

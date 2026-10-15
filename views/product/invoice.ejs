@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            max-width: 1000px;
+            margin: 35px auto;
+            padding: 35px;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #292929;
+            border-top: 6px solid #ff8c32;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #242424;
+            font-size: 28px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        hr {
+            margin: 25px 0;
+            border: none;
+            border-top: 2px solid #ff8c32;
+        }
+
+        p {
+            margin: 12px 0;
+            line-height: 1.6;
+            overflow-wrap: anywhere;
+        }
+
+        h3 {
+            margin-top: 28px;
+            padding-bottom: 10px;
+            color: #242424;
+            border-bottom: 2px solid #eeeeee;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 15px;
+            border-collapse: collapse;
+            border: 1px solid #dddddd;
+        }
+
+        th {
+            padding: 13px 10px;
+            background-color: #242424;
+            color: #ffffff;
+            text-align: left;
+            font-size: 13px;
+        }
+
+        td {
+            padding: 12px 10px;
+            border: 1px solid #dddddd;
+            font-size: 13px;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f8f8f8;
+        }
+
+        h2 {
+            margin-top: 25px;
+            padding: 18px;
+            background-color: #fff3e8;
+            border-left: 5px solid #ff8c32;
+            border-radius: 4px;
+            color: #242424;
+            font-size: 22px;
+        }
+
+        button {
+            padding: 11px 18px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff8c32;
+            color: #242424;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e8751c;
+        }
+
+        a {
+            color: #c96112;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a button {
+            background-color: #242424;
+            color: #ffffff;
+        }
+
+        a button:hover {
+            background-color: #444444;
+        }
+
+        @media (max-width: 650px) {
+            body {
+                margin: 15px;
+                padding: 20px 15px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+        }
+
+        @media print {
+            body {
+                max-width: none;
+                margin: 0;
+                padding: 15px;
+                border-top: 4px solid #ff8c32;
+                box-shadow: none;
+            }
+
+            button,
+            a {
+                display: none;
+            }
+
+            table {
+                display: table;
+                overflow: visible;
+                white-space: normal;
+            }
+
+            th {
+                background-color: #242424 !important;
+                color: #ffffff !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            h2 {
+                background-color: #fff3e8 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>NOTA PEMBELIAN / INVOICE</h1>
+    <hr>
+
+    <p><strong>No. Invoice:</strong> INV-00<%= order.id %></p>
+    <p><strong>Tanggal Transaksi:</strong> <%= order.createdAt ? order.createdAt.toISOString().slice(0, 10) : 'Hari ini' %></p>
+
+    <h3>Data Pembeli:</h3>
+    <% if (order.User && order.User.UserProfile) { %>
+        <p>Nama: <%= order.User.UserProfile.firstName %> <%= order.User.UserProfile.lastName %></p>
+        <p>No. HP: <%= order.User.UserProfile.phoneNum %></p>
+        <p>Alamat: <%= order.User.UserProfile.address %></p>
+    <% } else { %>
+        <p>Nama: <%= order.User ? order.User.userName : 'Pelanggan' %></p>
+    <% } %>
+    <br>
+
+    <h3>Rincian Belanja:</h3>
+    <table border="1" cellpadding="8" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama Produk</th>
+                <th>Kategori</th>
+                <th>Harga Satuan</th>
+                <th>Jumlah (Qty)</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% let grandTotal = 0; %>
+            <% order.Products.forEach((prod, i) => { %>
+                <% let qty = prod.OrderItem.totalPrice || 1; %>
+                <% let subtotal = prod.price * qty; %>
+                <% grandTotal += subtotal; %>
+                <tr>
+                    <td><%= i + 1 %></td>
+                    <td><%= prod.name %></td>
+                    <td><%= prod.Category ? prod.Category.name : '-' %></td>
+                    <td><%= formatRupiah(prod.price) %></td>
+                    <td><%= qty %></td>
+                    <td><%= formatRupiah(subtotal) %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+    <h2>Total Pembayaran: <%= formatRupiah(grandTotal) %></h2>
+    <br>
+
+    <!-- Tombol Cetak / Simpan PDF -->
+    <button onclick="window.print()" style="padding: 10px 20px; font-weight: bold; cursor: pointer;">Cetak / Simpan PDF</button>
+
+    <!-- Tombol Kirim Email (Nodemailer) -->
+    <a href="/orders/<%= order.id %>/send-email">
+        <button style="padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; margin-left: 10px;">Kirim Nota ke Email</button>
+    </a>
+    <br><br>
+
+    <a href="/orders">Kembali ke Keranjang</a> | <a href="/products">Kembali ke Katalog</a>
+</body>
+</html>
