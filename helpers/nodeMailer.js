@@ -19,7 +19,7 @@ const sendInvoiceEmail = async (toEmail, orderData, formattedTotal) => {
     // 2. Susun isi email nota
     let info = await transporter.sendMail({
       from: '"Tukang Ketok Store" <noreply@tukangketok.com>',
-      to: toEmail, // Email tujuan (bisa email siapa aja)
+      to: toEmail,
       subject: `Nota Pembelian #INV-00${orderData.id} - Tukang Ketok`,
       text: `Halo! Terima kasih sudah berbelanja perkakas di Tukang Ketok.\n\nNomor Invoice: INV-00${orderData.id}\nTotal Pembayaran: ${formattedTotal}\n\nSilakan cek website kami untuk detail pesanan.`,
       html: `
@@ -37,7 +37,6 @@ const sendInvoiceEmail = async (toEmail, orderData, formattedTotal) => {
 
     console.log("Message sent: %s", info.messageId);
     
-    // Ini penting! Ethereal nyediain link preview email supaya lo bisa lgsg liat bentuk emailnya di browser
     console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
 
     return true;

@@ -29,7 +29,7 @@ router.post('/products/:productId/buy', authMiddleware, OrderController.postCart
 router.get('/orders', authMiddleware, OrderController.getCart)
 
 // Node Mailer
-router.get('/orders/:id/invoice', authMiddleware, OrderController.renderInvoice);
-router.get('/orders/:id/send-email', authMiddleware, OrderController.sendEmailInvoice);
+router.get('/orders/:id/invoice', authMiddleware, OrderController.renderInvoice)
+router.get('/orders/:id/send-email', authMiddleware, OrderController.sendEmailInvoice)
 
 module.exports = router

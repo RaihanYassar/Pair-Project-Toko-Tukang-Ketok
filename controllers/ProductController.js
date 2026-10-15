@@ -66,18 +66,18 @@ class ProductController {
         imageUrl
       });
 
-      res.redirect('/products');
+      res.redirect('/products')
     } catch (error) {
-      console.log(error);
-      res.send(error.message);
+      console.log(error)
+      res.send(error.message)
     }
   }
   
   static async getEdit(req, res) {
     try {
-      const { id } = req.params;
-      const product = await Product.findByPk(id);
-      const categories = await Category.findAll();
+      const { id } = req.params
+      const product = await Product.findByPk(id)
+      const categories = await Category.findAll()
 
       res.render('product/editProduct', { 
         product, 
@@ -85,41 +85,41 @@ class ProductController {
         sessionUser: req.session.user 
       });
     } catch (error) {
-      console.log(error);
-      res.send(error.message);
+      console.log(error)
+      res.send(error.message)
     }
   }
 
   static async postEdit(req, res) {
     try {
       const { id } = req.params
-      const { name, price, stock, CategoryId, description, imageUrl } = req.body;
+      const { name, price, stock, CategoryId, description, imageUrl } = req.body
       
       await Product.update(
         { name, price, stock, CategoryId, description, imageUrl },
         { where: { id } }
       );
       
-      res.redirect('/products');
+      res.redirect('/products')
     } catch (error) {
-      console.log(error);
-      res.send(error.message);
+      console.log(error)
+      res.send(error.message)
     }
   }
 
   static delete(req, res) {
-    const { id } = req.params;
+    const { id } = req.params
     
     Product.destroy({ 
       where: { id } 
     })
     .then((result) => {
-      res.redirect('/products?message=Produk berhasil dihapus');
+      res.redirect('/products?message=Produk berhasil dihapus')
     })
     .catch((error) => {
-      console.log(error);
-      res.send(error.message);
-    });
+      console.log(error)
+      res.send(error.message)
+    })
   }
 }
 

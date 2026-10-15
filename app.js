@@ -7,15 +7,15 @@ const router = require('./routes')
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 
-// Setup Session (Requirement auth)
+// setup Session dulu
 app.use(session({
   secret: 'tukang-ketok-secret-key',
   resave: false,
   saveUninitialized: false,
-}));
+}))
 
 app.use('/', router)
 
 app.listen(port, () => {
-  console.log(`Server Tukang Ketok nyala udah nyala nich, di port ${port} yaa bree!!`)
+  console.log(`Example app listening on port ${port}`)
 })

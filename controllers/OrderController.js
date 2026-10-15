@@ -132,10 +132,9 @@ class OrderController {
         grandTotal += prod.price * qty;
       });
 
-      // Panggil fungsi kirim email dari helper
+      // helper
       await sendInvoiceEmail(order.User.email, order, formatRupiah(grandTotal));
 
-      // Redirect balik ke halaman invoice
       res.redirect(`/orders/${id}/invoice`);
     } catch (error) {
       console.log(error);

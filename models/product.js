@@ -38,10 +38,10 @@ module.exports = (sequelize, DataTypes) => {
           };
         }
 
-        const products = await Product.findAll(options);
-        return products;
+        const products = await Product.findAll(options)
+        return products
       } catch (err) {
-        throw err;
+        throw err
       }
     }
   }
